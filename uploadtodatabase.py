@@ -11,7 +11,8 @@ import streamlit_authenticator as stauth
 from deta import Deta 
 import streamlit as st
 import bcrypt
-
+from passlib.context import CryptContext
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 # Load the environment variables
@@ -111,18 +112,14 @@ if selected3 == "User Registration":
     names = st.text_input("Name", key=10)
     passwords = st.text_input("Password", type="password", key=11)
 
-    if st.button('Save'):
-        if usernames.strip() and names.strip() and passwords.strip():
-            # Generate a single hashed password for the entered password
-            salt = bcrypt.gensalt()
-            hashed_password = bcrypt.hashpw(passwords.encode('utf-8'), salt)
+    if st.button("Save"):
+        
+        # Hash the password
+        hashed_password = pwd_context.hash(passs)
 
-            # Insert the user into your database (you might need to modify this based on your database setup)
-            insert_user(usernames, names, hashed_password.decode('utf-8'))
-
-            st.success("User saved successfully!")
-        else:
-            st.warning("Please enter all the required fields (Username, Name, Password).")
+        # Now save the user information with the hashed password
+        insert_user(usernames1, names, hashed_password)
+ 
  
 
 
