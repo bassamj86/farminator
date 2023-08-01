@@ -118,7 +118,7 @@ if selected3 == "User Registration":
             hashed_password = bcrypt.hashpw(passwords.encode(), salt)
 
             # Insert the user into your database (you might need to modify this based on your database setup)
-            insert_user(usernames, names, hashed_password.decode())
+            insert_user(usernames, names, hashed_password.decode('utf-8'))
 
             st.success("User saved successfully!")
         else:
