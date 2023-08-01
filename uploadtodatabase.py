@@ -110,7 +110,7 @@ if selected3 == "User Registration":
 
     usernames = st.text_input("Username", key=9)
     names = st.text_input("Name", key=10)
-    passwords = st.text_input("Password", type="password", key=11)
+    passs = st.text_input("Password", type="password", key=11)
 
     if st.button("Save"):
         
