@@ -118,7 +118,7 @@ if selected3 == "User Registration":
         hashed_password = pwd_context.hash(passs)
 
         # Now save the user information with the hashed password
-        insert_user(usernames1, names, hashed_password)
+        insert_user(usernames, names, hashed_password)
  
  
 
