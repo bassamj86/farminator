@@ -115,7 +115,7 @@ if selected3 == "User Registration":
         if usernames.strip() and names.strip() and passwords.strip():
             # Generate a single hashed password for the entered password
             salt = bcrypt.gensalt()
-            hashed_password = bcrypt.hashpw(passwords.encode(), salt)
+            hashed_password = bcrypt.hashpw(passwords.encode('utf-8'), salt)
 
             # Insert the user into your database (you might need to modify this based on your database setup)
             insert_user(usernames, names, hashed_password.decode('utf-8'))
