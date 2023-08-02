@@ -14,7 +14,7 @@ import bcrypt
 from passlib.context import CryptContext
 import base64
 
-
+from PIL import Image
 
 
 
@@ -23,12 +23,9 @@ import base64
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
-def get_img_as_base64(file):
-        with open(file, "rb") as f:
-            data = f.read()
-        return base64.b64encode(data).decode()
 
-img = get_img_as_base64("preview.jpg")
+
+img = Image.open("preview.jpg")
 
 
 st.set_page_config(page_title="Admin", page_icon=img, layout="centered", initial_sidebar_state="auto", menu_items=None)
