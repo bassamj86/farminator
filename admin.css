@@ -3,3 +3,10 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+.graphs {
+  border: 1px solid #cccccc;
+  width: 450px;
+  height: 260px;
+}
