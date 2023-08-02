@@ -228,7 +228,7 @@ if authentication_status:
                 if user_data:
                     urls = [user["url"] for user in user_data]
                     for url in urls:
-                        st.markdown(f'<div class="hover-shadow"><iframe src="{url}"></iframe></div>', unsafe_allow_html=True)
+                        st.markdown(f'<div class="hover-shadow"><iframe class="graphs" src="{url}"></iframe></div>', unsafe_allow_html=True)
                 else:
                     st.warning(f"No data found for user {username_selected}")
             else:
