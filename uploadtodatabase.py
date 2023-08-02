@@ -109,7 +109,7 @@ if authentication_status:
 
 
 
-
+    authenticator.logout('Logout', 'main')
     selected3 = option_menu(None, ["User Registration", "User Chart Add"],
         
         default_index=0, orientation="horizontal",
